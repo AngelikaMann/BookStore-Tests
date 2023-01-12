@@ -23,8 +23,8 @@ public class AuthorCreateServiceTests
     }
 
     [Fact]
-    // public async Task Author_Created() 
-    public async Task Create_Author()
+    public async Task Author_Created()
+
     {
         //Arrange
         var authorCreate = new AuthorCreate("Max", "Test");

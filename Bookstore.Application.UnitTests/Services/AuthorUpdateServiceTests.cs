@@ -36,16 +36,18 @@ public class AuthorUpdateServiceTests
 
         var applicationLoggerMock = new Mock<IApplicationLogger<AuthorUpdateService>>();
         var authorUpdateService = new AuthorUpdateService(authorRepositoryMock.Object,
-    Mapper, Validator, applicationLoggerMock.Object);
+        Mapper, Validator, applicationLoggerMock.Object);
 
         //Act
         await authorUpdateService.UpdateAuthorAsync(authorUpdate);
         //Assert
         authorRepositoryMock.Verify(mock => mock.UpdateAsync(), Times.Once);
+
         applicationLoggerMock.Verify(mock =>
         mock.LogUpdateAuthorAsyncCalled(authorUpdate), Times.Once);
+
         applicationLoggerMock.Verify(mock =>
-       mock.LogAuthorUpdated(author), Times.Once);
+        mock.LogAuthorUpdated(author), Times.Once);
 
     }
     [Fact]

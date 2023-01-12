@@ -22,7 +22,7 @@ namespace Bookstore.Application
 
         public void LogValidationErrorInCreateAuthor(ValidationException ex, AuthorCreate authorCreate)
         {
-            Logger.LogError(ex, "Validation Error in CreateAuthor. {authoCreate}", authorCreate);
+            Logger.LogError(ex, "Validation Error in CreateAuthor. {authorCreate}", authorCreate);
         }
 
         public void LogAuthorCreated(long id)
